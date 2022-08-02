@@ -40,6 +40,7 @@ class FlutterAppcenterBundlePlugin : FlutterPlugin, MethodCallHandler, ActivityA
 
         @JvmStatic
         fun registerWith(registrar: Registrar) {
+            // Temporary fix for flutter app_center_bundle. Null check added until developer resolves this issue.
             application = registrar.activity()?.application
             val channel = MethodChannel(registrar.messenger(), methodChannelName)
             channel.setMethodCallHandler(FlutterAppcenterBundlePlugin())
